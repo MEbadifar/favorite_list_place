@@ -24,7 +24,7 @@ class PlacesListScreen extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: Provider.of<GreatPlaces>(context, listen: false)
-        .fetchAndSetPlaces(),
+            .fetchAndSetPlaces(),
         builder: ((context, snapshot) =>
             snapshot.connectionState == ConnectionState.waiting
                 ? const Center(child: CircularProgressIndicator())
@@ -42,6 +42,8 @@ class PlacesListScreen extends StatelessWidget {
                                 ),
                               ),
                               title: Text(gratePlaces.items[i].title),
+                              subtitle:
+                                  Text(gratePlaces.items[i].location!.address!),
                               onTap: () {
                                 //go to detail Page ...
                               },

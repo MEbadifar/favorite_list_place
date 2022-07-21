@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:favorite_list_place/widgets/location_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -43,7 +44,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
         children: [
           Expanded(
             child: SingleChildScrollView(
-              child: Padding(
+              child: Padding( 
                 padding: const EdgeInsets.all(10.0),
                 child: Column(
                   children: [
@@ -53,6 +54,10 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
                     ),
                     const SizedBox(height: 10),
                     ImageInput(_selectImage),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    LocationInput(),
                   ],
                 ),
               ),

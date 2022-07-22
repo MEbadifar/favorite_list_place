@@ -51,15 +51,18 @@ class _MapScreenState extends State<MapScreen> {
                 widget.initialLocation.longitude),
             zoom: 16),
         onTap: widget.isSelecting ? _selectLocation : null,
-        markers: _pickedLocation == null
+        markers: (_pickedLocation == null && widget.isSelecting)
             ? <Marker>{}
-            : [
+            : {
                 Marker(
-                    markerId: const MarkerId('m1'),
-                    position: _pickedLocation ??
-                        LatLng(widget.initialLocation.latitude,
-                            widget.initialLocation.longitude))
-              ].toSet(),
+                  markerId: const MarkerId('m1'),
+                  position: _pickedLocation ??
+                      LatLng(
+                        widget.initialLocation.latitude,
+                        widget.initialLocation.longitude,
+                      ),
+                )
+              }.toSet(),
       ),
     );
   }

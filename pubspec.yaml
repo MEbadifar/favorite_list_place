@@ -38,6 +38,8 @@ dependencies:
   path_provider: ^2.0.11
   provider: ^6.0.3
   sqflite: ^2.0.3
+  google_maps_flutter_web: ^0.3.2+2
+  camera_web: ^0.3.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0
